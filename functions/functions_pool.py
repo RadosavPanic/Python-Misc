@@ -1,5 +1,3 @@
-# Functions, Lambda, Arguments (required, keyword, default)
-
 def convertTextDashed(str):
     """Converts and returns text spaces to dashed symbols for a passed string argument."""  # function_docstring
     replacedString = str.replace(' ', '-')
@@ -36,6 +34,4 @@ def flatList(listToFlat):
 
 list_flatted = flatList(list1)  # list1 = [1, 2, 3, [16, 22, 5]]
 print(list_flatted)  # [1, 2, 3, 16, 22, 5]
-
-
 
