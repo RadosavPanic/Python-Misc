@@ -71,3 +71,7 @@ print('12'.isdigit(), 'r12'.isnumeric(), '12'.isdecimal())  # True False True
 print(' '.isspace())  # True
 print('tt'.islower(), 'tt'.isupper(), 'Tt Tt'.istitle())  # True False True
 
+# Fast String Format
+job = 'Teacher'
+print(f"Hello {job}")  # Hello Teacher
+
