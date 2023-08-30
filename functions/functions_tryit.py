@@ -34,6 +34,22 @@ fn_default("Mark")  # Employee: Mark, job: Programmer
 fn_default("Dan", "Data Analyst")  # Employee: Dan, job: Data Analyst
 
 
+# VARIABLE-LENGTH Arguments
+
+def fn_var_length(*args_tuple):
+    """Function with arbitrary number of arguments which forms a tuple."""
+    for args in args_tuple:
+        print(args, end=" ")
+    return
+
+
+fn_var_length(100, 540, 'f', ['docs', 'test'])  # 100 540 f ['docs', 'test']
+
+# LAMBDA (Anonymous) Functions
+
+sumTwo = lambda arg1, arg2: arg1 + arg2
+
+print(f"\nSum two: {sumTwo(50, 130)}")
 
 
 

@@ -35,3 +35,31 @@ def flatList(listToFlat):
 list_flatted = flatList(list1)  # list1 = [1, 2, 3, [16, 22, 5]]
 print(list_flatted)  # [1, 2, 3, 16, 22, 5]
 
+
+def removeListElements(list1, list2):
+    """Function for removal of elements from given list2 in list1."""
+    result = list(filter(lambda x: x not in list2, list1))
+    return result
+
+
+list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+list2 = [2, 4, 6, 8]
+print(removeListElements(list1, list2))  # [1, 3, 5, 7, 9, 10]
+
+# Variable Scopes
+Money = 2000
+
+
+def AddMoney():
+    """Receives a global variable from outside that can be manipulated."""
+    global Money
+    Money += 1
+
+
+print(Money)  # 2000
+AddMoney()
+print(Money)  # 2001
+
+
+
+
