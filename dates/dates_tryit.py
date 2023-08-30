@@ -61,7 +61,7 @@ Mo Tu We Th Fr Sa Su
 28 29 30 31
 """
 
-print(calendar.month(2023, 8, 5, 1)) # also calendar.prmonth(year,month,w,l)
+print(calendar.month(2023, 8, 5, 1))  # also calendar.prmonth(year,month,w,l)
 """
                August 2023
  Mon   Tue   Wed   Thu   Fri   Sat   Sun
@@ -90,8 +90,3 @@ print(calendar.firstweekday())  # 0 (Monday, 0-based)
 calendar.setfirstweekday(1); print(calendar.firstweekday())  # 1
 
 print(calendar.weekday(2023, 8, 30))  # 2 (0-based, 2 = Wednesday)
-
-
-
-
-
