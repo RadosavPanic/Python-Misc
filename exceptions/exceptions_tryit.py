@@ -1,14 +1,18 @@
 # Assertions, try-except-else, try-finally, raise, throw
 
+import sys
+import traceback
+
+
 # ----ASSERTIONS----
 
-def KelvinToFahrenheit(Temperature):
-    assert (Temperature >= 0), "Colder than absolute zero!"
-    return ((Temperature - 273) * 1.8) + 32
+def kelvinToFahrenheit(temperature):
+    assert (temperature >= 0), "Colder than absolute zero!"
+    return ((temperature - 273) * 1.8) + 32
 
 
-print(KelvinToFahrenheit(273))
-print(int(KelvinToFahrenheit(450)))
+print(kelvinToFahrenheit(273))
+print(int(kelvinToFahrenheit(450)))
 # print(KelvinToFahrenheit(-5))  # throws an AssertionError (raise-if-not)
 
 # ----TRY-EXCEPT-ELSE----
@@ -22,11 +26,6 @@ except IOError:
 else:
     print("Data written to the file successfully")
     fd.close()
-"""  # throws an IOError because file is open in read mode, no permission to write data
-
-
-# ----TRY-FINALLY----
-
 """
 try:
     fd2 = open('file1.txt', 'r')
@@ -38,6 +37,11 @@ try:
 except IOError:
     print("Error: can\'t find or read data")
 """  # same as above, but file stream is closed as finally block is always executed
+"""  # throws an IOError because file is open in read mode, no permission to write data
+
+
+# ----TRY-FINALLY----
+
 
 # ----EXCEPT WITH PARAMETER----
 
@@ -68,7 +72,7 @@ try:
     print("Game start...")
     game_progress(0)  # will throw a NameError from the function
 except NameError as ne:
-    print(f"An error occured with fetching game data.\n---> {ne}")
+    print(f"An error occurred with fetching game data.\n---> {ne}")
 else:
     print("Level loaded successfully")
 """
@@ -80,8 +84,28 @@ class NetworkError(RuntimeError):
     def __int__(self, args):
         self.args = args
 
+
 try:
     raise NetworkError(['first issue', 'second issue', 'third issue'])
 except NetworkError as e:
     print(f"Network issue: ---> {e.args}")
 
+
+# ----TRACEBACK----
+
+def cmd_run_code(command):
+    source = input(">>> ")
+    try:
+        exec(source, command)
+    except Exception:
+        print("Exception in user code:")
+        print("-" * 30)
+        # traceback.print_stack()
+        traceback.print_exc(file=sys.stdout)
+        print("-" * 30)
+
+
+command = {}
+while True:
+    cmd_run_code(command)
+# this is short interactive prompt
