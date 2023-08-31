@@ -91,6 +91,7 @@ print(isinstance(programmer1, Programmer))  # True -> isinstance(obj, Class)
 
 # ----FAST INHERITANCE----
 
+
 class Road:
     def __init__(self, name, length):
         self.name = name
