@@ -85,3 +85,42 @@ programmer1 = Programmer('Jack', "Front-End Developer", 1900, ['JavaScript', 'Re
 programmer1.displayInfo()
 programmer1.showSkills()
 programmer1.displayCount()
+
+print(issubclass(Programmer, Employee))  # True -> issubclass(sub, sup)
+print(isinstance(programmer1, Programmer))  # True -> isinstance(obj, Class)
+
+# ----FAST INHERITANCE----
+
+class Road:
+    def __init__(self, name, length):
+        self.name = name
+        self.length = length
+
+    def roadInfo(self):
+        print("-" * 30)
+        print("Road definition")
+        print(f"Name:\t {self.name}")
+        print(f"Length:\t {self.length}m")
+
+
+class Highway(Road):
+    pass
+
+
+class MainRoad(Road):
+    pass
+
+
+class LocalRoad(Road):
+    pass
+
+
+highway1 = Highway("A1", 2500)
+mainroad1 = MainRoad("G75", 750)
+localroad1 = LocalRoad("P12", 200)
+
+highway1.roadInfo()
+mainroad1.roadInfo()
+localroad1.roadInfo()
+
+
