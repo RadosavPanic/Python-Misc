@@ -56,4 +56,26 @@ counter.tick()  # 1
 counter.tick()  # 2
 # print(counter.__count)  # AttributeError not finding attribute, cannot access private property
 
+# ----DECORATORS----
 
+
+class Person:
+    @staticmethod  # no self or cls parameters, no access to class or instance attributes
+    def static_greet(): print("Static greeting!")
+
+    @classmethod  # 1st parameter must be cls, can only access class attributes but no instance ones
+    def class_greet(cls):
+        if cls.__name__ == 'Person':
+            print('Hello another person!')
+        elif cls.__name__  == 'Promoter':
+            print('Hello promoter!')
+        elif cls.__name__ == 'Waiter':
+            print('Hello waiter!')
+        else:
+            print('Hello ?')
+
+# another classes can be here
+
+
+Person.static_greet()  # Static greeting!
+Person.class_greet()  # Hello another person!
