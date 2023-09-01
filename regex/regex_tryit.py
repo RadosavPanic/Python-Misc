@@ -37,10 +37,6 @@ else:
 
 phone = "2004-959-559 # this is a number"
 number = re.sub(r"#.*$", "", phone)  # remove python comments
-print(number)
+print(number)  # 2004-959-559
 number = re.sub(r"\D", "", phone)  # remove everything other than digits
-print(number)
-
-
-
-
+print(number)  # 2004959559

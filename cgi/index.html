@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form CGI Val</title>
+</head>
+<body>
+    <form action="./nameinput.py" method="post">
+        First name: <input type="text" name="first_name" /> <br />
+        Last name: <input type="text" name="last_name" /> <br />
+        <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <br />
+    <form action="./checkbox.py" method="post" target="_blank">
+        <input type="checkbox" name="maths" value="maths"/> Maths
+        <input type="checkbox" name="physics" value="physics"/> Physics
+        <input type="submit" value="Select Subject" />
+    </form>
+    <br />
+    <br />
+    <form action="./radiobutton.py" method="post" target="_blank">
+        <input type="radio" name="maths" value="maths"/> Maths
+        <input type="radio" name="physics" value="physics"/> Physics
+        <input type="submit" value="Select Subject" />
+    </form>
+    <br />
+    <br />
+    <form action="./textarea.py" method="post" target="_blank">
+        <textarea name="textcontent" cols="40" rows="4">
+            Type your text here...
+        </textarea>
+        <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <br />
+    <form action="./dropdown.py" method="post" target="_blank">
+        <select name="dropdown">
+            <option value="Maths" selected>Maths</option>
+            <option value="Physics">Physics</option>
+        </select>
+        <input type="submit" value="Submit"/>
+    </form>
+    <br />
+    <br />
+    <form enctype="multipart/form-data" action="http://127.0.0.1/save_file.py" method="post">
+        <p>File: <input type="file" name="filename" /></p>
+        <p><input type="submit" value="Upload" /></p>
+    </form>
+</body>
+</html>
