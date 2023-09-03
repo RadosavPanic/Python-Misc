@@ -10,6 +10,7 @@ def print_current_time(threadName, delay):
         print("%s %s" % (threadName, time.ctime(time.time())))
         print(threading.current_thread().name)
 
+
 try:
     t1 = threading.Thread(target=print_current_time, args=("Thread-1", 1))
     t2 = threading.Thread(target=print_current_time, args=("Thread-2", 2))
