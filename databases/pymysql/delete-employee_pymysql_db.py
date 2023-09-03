@@ -11,13 +11,9 @@ print(f"Database '{db_name}' opened successfully")
 
 cursor = db.cursor()
 
-table_name = "login"
+table_name = "employee"
 
-user_id = "john"
-password = "doe"
-
-sql = f"""insert into {table_name}(username, password) 
-                    values('%s', '%s')""" % (user_id, password)
+sql = f"delete from {table_name} where age > '%d'" % 20
 
 try:
     cursor.execute(sql)

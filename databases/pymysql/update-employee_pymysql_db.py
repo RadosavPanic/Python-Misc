@@ -11,13 +11,9 @@ print(f"Database '{db_name}' opened successfully")
 
 cursor = db.cursor()
 
-table_name = "login"
+table_name = "employee"
 
-user_id = "john"
-password = "doe"
-
-sql = f"""insert into {table_name}(username, password) 
-                    values('%s', '%s')""" % (user_id, password)
+sql = f"update {table_name} set age = age + 1 where sex = '%c'" % 'M'
 
 try:
     cursor.execute(sql)
