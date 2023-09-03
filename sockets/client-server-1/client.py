@@ -10,4 +10,3 @@ socketObj.connect((host, port))
 print(socketObj.recv(1024).decode())
 
 socketObj.close()
-
