@@ -6,19 +6,17 @@ var = IntVar()
 
 
 def select():
-    text = optionList[var.get()-1]
+    text = optionList[var.get() - 1]
     selection = f"You selected: {text}"
     labelBottom.config(text=selection)
 
 
 optionList = ["Django", "Express.js", "Laravel"]
 
-labelTop = Label(root, text="What's the best framework for web developers?")
-r1 = Radiobutton(root, text="Django", variable=var, value=1, command=select)
-r2 = Radiobutton(root, text="Express.js", variable=var, value=2, command=select)
-r3 = Radiobutton(root, text="Laravel", variable=var, value=3, command=select)
+Label(root, text="What's the best framework for web developers?").pack()
+for idx in range(3):
+    Radiobutton(root, text=optionList[idx-1], variable=var, value=idx, command=select).pack()
 labelBottom = Label(root)
-
-labelTop.pack(); r1.pack(anchor=W);r2.pack(anchor=W);r3.pack(anchor=W);labelBottom.pack()
+labelBottom.pack()
 
 root.mainloop()
