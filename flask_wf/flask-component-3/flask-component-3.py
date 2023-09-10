@@ -18,5 +18,11 @@ def pass_name(name):
     return render_template("profile.html", name_param=name.capitalize())
 
 
+@app.route("/results")
+def result():
+    dictResults = {'physics': 50, 'chemistry': 60, 'maths': 80}
+    return render_template("results.html", result=dictResults)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
